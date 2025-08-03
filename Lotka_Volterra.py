@@ -2,12 +2,12 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.integrate import solve_ivp
 
-#première simulation du système de Lotka-Volterra en me basant de ce que j'ai trouver sur https://fr.wikipedia.org/wiki/%C3%89quations_de_pr%C3%A9dation_de_Lotka-Volterra 
+#première simulation du système de Lotka-Volterra à base de ce qui à était trouver sur https://fr.wikipedia.org/wiki/%C3%89quations_de_pr%C3%A9dation_de_Lotka-Volterra 
 
-alpha=2 # taux de reproduction intrinsèque des proies
+alpha=5 # taux de reproduction intrinsèque des proies
 beta=0.2 # taux de mortalité des proies dû aux prédateurs rencontrés 
 delta=0.15 # taux de reproduction des prédateurs en fonction des proies rencontrées et mangées
-gama=20 # taux de mortalité intrinsèque des prédateurs
+gama=15 # taux de mortalité intrinsèque des prédateurs
 
 def lot_vol(t, state):
     x, y = state 
