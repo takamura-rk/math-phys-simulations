@@ -5,13 +5,13 @@ import constantes
 
 class Planet:
     def __init__(self,name,mass,x,y):
-        self.name=name
+        self.name=name 
         self.mass=mass
         self.x=x
         self.y=y
           
-    def rprime(self,r,m):
-        return np.sqrt(constantes.G*m/r)
+    def rprime(self,r,mass):
+        return np.sqrt(constantes.G*mass/r)
         
     def calc_F_grav(self,other):
     
@@ -21,7 +21,7 @@ class Planet:
         if distance == 0:
             return (0, 0)  
 
-        force = constantes.G * self.m* other.m / (distance**2)
+        force = constantes.G * self.mass* other.mass / (distance**2)
     # Vecteur unitaire dans la direction de 'other'
         fx = force * dx / distance
         fy = force * dy / distance
@@ -42,8 +42,8 @@ class Planet:
             total_fy += fy
 
     # Accélération = force / masse
-        ax = total_fx / self.m
-        ay = total_fy / self.m
+        ax = total_fx / self.mass
+        ay = total_fy / self.mass
 
         return ax, ay
 
